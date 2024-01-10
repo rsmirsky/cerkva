@@ -18,7 +18,8 @@ export default {
                 themeSystem: 'bootstrap5',
                 initialView: 'dayGridMonth',
                 dateClick: this.handleDateClick,
-                events: this.posts
+                events: this.posts,
+                eventClick: this.handleEventDateClick
             }
         }
     },
@@ -26,6 +27,9 @@ export default {
         handleDateClick: function (arg) {
             alert('date click! ' + arg.dateStr)
         },
+        handleEventDateClick: function (arg) {
+            alert('date click! ' + arg.dateStr)
+        }
     }
 }
 </script>
@@ -33,6 +37,20 @@ export default {
 <template>
     <FullCalendar :options="calendarOptions"/>
 </template>
+
+<style>
+
+
+:root {
+     /*font-size: 1.2rem;*/
+    font-style: ;
+    --fc-border-color: black;
+    --fc-daygrid-event-dot-width: 5px;
+    --fc-today-bg-color: rgb(255,255,102) ;
+    --fc-bg-event-color: rgb(204, 0, 0);
+
+}
+</style>
 
 <!--<template>-->
 <!--        <table class="mt-4 min-w-full divide-y divide-gray-200 border">-->
