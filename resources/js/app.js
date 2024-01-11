@@ -17,7 +17,7 @@ createInertiaApp({
 
 
 /*
-import './bootstrap';
+import './bootstrap2';
 import {createApp, h} from 'vue'
 import {createInertiaApp} from '@inertiajs/vue3'
 

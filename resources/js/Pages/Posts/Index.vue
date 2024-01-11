@@ -2,14 +2,17 @@
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
+import esLocale from '@fullcalendar/core/locales/es'
 import {formToJSON} from "axios";
+
 
 export default {
     props: {
         posts: Object,
     },
     components: {
-        FullCalendar // make the <FullCalendar> tag available
+        FullCalendar, // make the <FullCalendar> tag available
+        esLocale
     },
     data() {
         return {
@@ -19,7 +22,8 @@ export default {
                 initialView: 'dayGridMonth',
                 dateClick: this.handleDateClick,
                 events: this.posts,
-                eventClick: this.handleEventDateClick
+                eventClick: this.handleEventDateClick,
+                locale: esLocale
             }
         }
     },
