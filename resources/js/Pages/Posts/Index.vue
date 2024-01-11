@@ -23,7 +23,7 @@ export default {
                 dateClick: this.handleDateClick,
                 events: this.posts,
                 eventClick: this.handleEventDateClick,
-                locale: esLocale
+                locale: 'uk'
             }
         }
     },
@@ -45,9 +45,13 @@ export default {
 <style>
 
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
+
+
+
 :root {
      /*font-size: 1.2rem;*/
-    font-style: ;
+    font-family: 'Montserrat', sans-serif;
     --fc-border-color: black;
     --fc-daygrid-event-dot-width: 5px;
     --fc-today-bg-color: rgb(255,255,102) ;

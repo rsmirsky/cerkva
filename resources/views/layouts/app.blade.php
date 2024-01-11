@@ -532,7 +532,15 @@
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
     <style>
+
+        body {
+            font-family: 'Montserrat', sans-serif; !important;
+        }
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
