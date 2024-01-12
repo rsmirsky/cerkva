@@ -4,13 +4,17 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import esLocale from '@fullcalendar/core/locales/es'
 import {formToJSON} from "axios";
-
+import Modal from "@/Pages/Posts/Modal.vue";
+import App from "@/Pages/Posts/App.vue";
 
 export default {
     props: {
         posts: Object,
+
     },
     components: {
+        App,
+        Modal,
         FullCalendar, // make the <FullCalendar> tag available
         esLocale
     },
@@ -34,46 +38,15 @@ export default {
                     alert(element.description)
                 }
             });
-        }/*,
-        handleDateClick: function (arg) {
-          alert('date click! ' + arg.dateStr)
-      }*/
+        }
     }
 }
 
 
-
-
-/*handleDateClick: function (arg) {
-    var passing = true;
-}
-    this.posts.forEach(function(element) {
-        if (element.id == arg.id) {
-            alert(element.description)
-        }
-    });
-    return passing;
-}
-*/
-
-
-            //this.posts.forEach((element) => alert(element.description));
-            //alert('date click! ' + arg.dateStr)
-
-       /* handleEventDateClick: function (arg) {
-            alert('date click! ' + arg.dateStr)
-        }*/
-
-
 </script>
 
-<!--<template>
-    <FullCalendar :options="calendarOptions"/>
-</template>-->
-
 <template>
-    <FullCalendar :options="calendarOptions">
-
+    <FullCalendar :options="calendarOptions" >
 <!--        <template v-slot:eventContent='arg'>
             <b>{{ arg.event.title }}</b>
             <article v-for="post in posts" >
