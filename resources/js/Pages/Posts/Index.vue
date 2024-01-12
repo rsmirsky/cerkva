@@ -22,24 +22,67 @@ export default {
                 initialView: 'dayGridMonth',
                 dateClick: this.handleDateClick,
                 events: this.posts,
-                eventClick: this.handleEventDateClick,
+                //eventClick: this.handleEventDateClick,
                 locale: 'uk'
             }
         }
     },
     methods: {
         handleDateClick: function (arg) {
-            alert('date click! ' + arg.dateStr)
-        },
-        handleEventDateClick: function (arg) {
-            alert('date click! ' + arg.dateStr)
-        }
+            this.posts.forEach(function (element) {
+                if (element.date === arg.dateStr) {
+                    alert(element.description)
+                }
+            });
+        }/*,
+        handleDateClick: function (arg) {
+          alert('date click! ' + arg.dateStr)
+      }*/
     }
 }
+
+
+
+
+/*handleDateClick: function (arg) {
+    var passing = true;
+}
+    this.posts.forEach(function(element) {
+        if (element.id == arg.id) {
+            alert(element.description)
+        }
+    });
+    return passing;
+}
+*/
+
+
+            //this.posts.forEach((element) => alert(element.description));
+            //alert('date click! ' + arg.dateStr)
+
+       /* handleEventDateClick: function (arg) {
+            alert('date click! ' + arg.dateStr)
+        }*/
+
+
 </script>
 
-<template>
+<!--<template>
     <FullCalendar :options="calendarOptions"/>
+</template>-->
+
+<template>
+    <FullCalendar :options="calendarOptions">
+
+<!--        <template v-slot:eventContent='arg'>
+            <b>{{ arg.event.title }}</b>
+            <article v-for="post in posts" >
+                <h3>{{post.description}}</h3>
+                <h3>{{arg.dateStr}}</h3>
+            </article>
+
+        </template>-->
+    </FullCalendar>
 </template>
 
 <style>
