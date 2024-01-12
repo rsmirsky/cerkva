@@ -35,7 +35,7 @@ export default {
         handleDateClick: function (arg) {
             this.posts.forEach(function (element) {
                 if (element.date === arg.dateStr) {
-                    alert(element.description)
+                    alert(element.description.replace(/<[^>]*>?/gm, ''))
                 }
             });
         }
